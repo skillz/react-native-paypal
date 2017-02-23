@@ -115,4 +115,9 @@ public class PayPal extends ReactContextBaseJavaModule {
 
     currentActivity.stopService(new Intent(currentActivity, PayPalService.class));
   }
+
+  public void destroy() {
+    currentActivity = null;
+    activityContext = null;
+  }
 }
