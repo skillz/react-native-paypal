@@ -45,4 +45,8 @@ public class PayPalPackage implements ReactPackage {
   public void handleActivityResult(final int requestCode, final int resultCode, final Intent data) {
     paypalModule.handleActivityResult(requestCode, resultCode, data);
   }
+
+  public void destroy() {
+    context = null;
+  }
 }
