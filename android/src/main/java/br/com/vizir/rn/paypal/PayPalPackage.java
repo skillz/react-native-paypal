@@ -23,6 +23,13 @@ public class PayPalPackage implements ReactPackage {
     this.paymentIntentRequestCode = paymentIntentRequestCode;
   }
 
+  public void updateContext(Context activityContext) {
+    context = activityContext;
+    if (paypalModule != null) {
+      paypalModule.updateContext(context);
+    }
+  }
+
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();

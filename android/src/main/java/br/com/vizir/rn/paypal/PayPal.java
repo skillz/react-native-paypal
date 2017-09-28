@@ -40,6 +40,11 @@ public class PayPal extends ReactContextBaseJavaModule {
     this.paymentIntentRequestCode = requestCode;
   }
 
+  public void updateContext(Context context) {
+    this.activityContext = context;
+    this.currentActivity = (Activity)context;
+  }
+
   @Override
   public String getName() {
     return "PayPal";
